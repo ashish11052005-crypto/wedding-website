@@ -249,5 +249,7 @@ function debounce(func, wait) {
 const debouncedScroll = debounce(() => {
 
 }, 10);
-
+document.addEventListener("click", function () {
+    document.getElementById("bgMusic").muted = false;
+});
 window.addEventListener('scroll', debouncedScroll);
