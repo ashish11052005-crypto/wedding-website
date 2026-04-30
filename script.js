@@ -249,7 +249,16 @@ function debounce(func, wait) {
 const debouncedScroll = debounce(() => {
 
 }, 10);
-document.addEventListener("click", function () {
-    document.getElementById("bgMusic").muted = false;
-});
+
 window.addEventListener('scroll', debouncedScroll);
+window.addEventListener("load", () => {
+    const music = document.getElementById("bgMusic");
+
+    // try autoplay
+    music.play().catch(() => {
+        // if blocked, wait for user interaction
+        document.addEventListener("click", () => {
+            music.play();
+        }, { once: true });
+    });
+});
