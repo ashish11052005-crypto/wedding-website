@@ -1,4 +1,3 @@
-
 function updateCountdown() {
     const weddingDate = new Date('May 14, 2026 12:34:00').getTime();
     const now = new Date().getTime();
@@ -19,10 +18,8 @@ function updateCountdown() {
     }
 }
 
-
 setInterval(updateCountdown, 1000);
 updateCountdown();
-
 
 const navbar = document.getElementById('navbar');
 let lastScroll = 0;
@@ -39,7 +36,6 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -54,7 +50,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
@@ -68,7 +63,6 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const animateElements = document.querySelectorAll('.event-card, .gallery-item, .about-content, .location-content');
     animateElements.forEach(el => {
@@ -77,11 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
 const musicToggle = document.getElementById('musicToggle');
 const bgMusic = document.getElementById('bgMusic');
 let isPlaying = false;
-
 
 bgMusic.volume = 0.5;
 
@@ -107,18 +99,15 @@ musicToggle.addEventListener('click', function(e) {
     }
 });
 
-
 const galleryItems = document.querySelectorAll('.gallery-item');
 galleryItems.forEach(item => {
     item.addEventListener('click', () => {
-
         item.style.transform = 'scale(0.95)';
         setTimeout(() => {
             item.style.transform = 'scale(1)';
         }, 200);
     });
 });
-
 
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
@@ -127,7 +116,6 @@ window.addEventListener('scroll', () => {
         hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
     }
 });
-
 
 function preloadImages() {
     const images = document.querySelectorAll('img');
@@ -140,14 +128,11 @@ function preloadImages() {
     });
 }
 
-
 window.addEventListener('load', () => {
     preloadImages();
     
-
     document.querySelector('.hero-content').style.opacity = '1';
     
-
     if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -166,12 +151,10 @@ window.addEventListener('load', () => {
     }
 });
 
-
 const floralElements = document.querySelectorAll('.floral-top, .floral-bottom');
 floralElements.forEach((element, index) => {
     element.style.animation = `float 3s ease-in-out ${index * 0.5}s infinite`;
 });
-
 
 const style = document.createElement('style');
 style.textContent = `
@@ -185,7 +168,6 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
-
 
 let clickCount = 0;
 document.querySelector('.couple-names')?.addEventListener('click', () => {
@@ -232,7 +214,6 @@ function createConfetti() {
     }
 }
 
-
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -245,19 +226,7 @@ function debounce(func, wait) {
     };
 }
 
-
 const debouncedScroll = debounce(() => {
-
 }, 10);
 
 window.addEventListener('scroll', debouncedScroll);
-window.addEventListener("load", () => {
-  function playMusic() {
-    const music = document.getElementById("bgMusic");
-    music.play();
-}
-
-            
-        }, { once: true });
-    });
-});
